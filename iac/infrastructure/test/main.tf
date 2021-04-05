@@ -15,5 +15,5 @@ variable "password" {
 provider "dnacenter" {
   username = var.username
   password = var.password
-  base_url = "https://dnac.gotlab.net.tld"
+  base_url = "https://dnac.lab.net.tld"
 }
