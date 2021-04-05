@@ -32,3 +32,27 @@ resource "dna_site" "area" {
       parent_name = "Global"
   }
 }
+
+resource "dna_site" "building_10" {
+  provider = dnacenter
+  depends_on = [ dna_site.area ]
+  item {
+    type = "building"
+    name = "Building_10"
+    parent_name = dna_site.area.id
+    address = "Cisco - Gothenburg, Lilla Bommen 1, Gothenburg, Sweden"
+  }
+}
+resource "dna_site" "building_10_floor1" {
+  provider = dnacenter
+  depends_on = [ dna_site.building_10 ]
+  item {
+    type = "floor"
+    name = "Floor 1"
+    parent_name = dna_site.building_10.id
+    rf_model = "Cubes And Walled Offices"
+    height = 100
+    length = 100
+    width = 100
+  }
+}
