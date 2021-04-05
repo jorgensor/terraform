@@ -21,6 +21,7 @@ provider "dnacenter" {
   username = var.username
   password = var.password
   base_url = var.base_url
+  ssl_verify = "false"
 }
 
 resource "dna_site" "area" {
